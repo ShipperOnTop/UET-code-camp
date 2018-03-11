@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My To Do List</title>
+</head>
+<body>
+
+<h1 style="background-color:Red;color:White;text-align:center">
+<div> My To Do List</div>
+<div><input placeholder=Title...><button> Add</button></div>
+</h1>
+
+<h2>
+
+<div style="background-color:Black;color:White;">&#10004; Buy Egg x </div>
+<div> Read a book x</div>
+<div> Organize office x</div>
+<div> UET code camp 2018 x</div>
+
+</h2>
+</body>
+</html>
