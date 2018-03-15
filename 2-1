@@ -17,7 +17,11 @@
     .main ul li:hover .remove{
         background-color:red;
         }
-     
+    .main ul li.completed {
+  background: #888;
+  color: #fff;
+  text-decoration: line-through;
+}
     h2 button {
     background-color:#f9f9f9;}
 </style>
@@ -51,5 +55,11 @@ var remove=document.getElementsByClassName("remove");
       div.style.display = "none";
     }
   }
+var todo = document.querySelector('ul');
+  todo.addEventListener('click', function(e) {
+    if (e.target.tagName === 'LI') {
+      e.target.classList.toggle('completed');
+    }
+  }, false);
 </script>
 </html>
