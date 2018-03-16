@@ -48,6 +48,7 @@
 		<script>
 
 		function add(){
+        			var remove=document.getElementsByClassName("remove");
 					var inputvalue = document.getElementById("input1").value;
 					if (inputvalue.length > 0){
 					var node = document.createElement("LI");
@@ -56,17 +57,18 @@
 						document.getElementById('input1').value = "";
 						}else {
 									alert("Write something,dumbass~~");
-								}	
-							}
-						
-			var remove=document.getElementsByClassName("remove");
-			var i;
-			for (i = 0; i < remove.length; i++) {
-				remove[i].onclick = function() {
+								}
+                   	var i;
+					for (i = 0; i < remove.length; i++) {
+					remove[i].onclick = function() {
 					var div = this.parentElement;
 					div.style.display = "none";
-				}
-			}
+					}
+					}
+					}
+				
+			
+			
 			var todo = document.querySelector('ul');
 			todo.addEventListener('click', function(e) {
 				if (e.target.tagName === 'LI') {
@@ -76,4 +78,5 @@
 
 		</script>
 		</html>
+
 
