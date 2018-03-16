@@ -1,65 +1,79 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-<style>
+	<style>
 	*{padding:0;
-    margin:0;
-    }
-    header{background-color:Red;color:White;text-align:center;}
-    h2 input{font-size:16px;}
-    .main ul li{position:relative;}
-    .main ul li .remove{position:absolute;
-    right:0;}
-    .main ul li:hover{
-    	background-color:#f9f9f9;
-        cursor:pointer;}
-    .main ul li:hover .remove{
-        background-color:red;
-        }
-    .main ul li.completed {
-  background: #888;
-  color: #fff;
-  text-decoration: line-through;
-}
-    h2 button {
-    background-color:#f9f9f9;}
-</style>
-</head>
+		margin:0;
+	}
+	header{background-color:Red;color:White;text-align:center;}
+	h2 input{font-size:16px;}
+	.main ul li{position:relative;}
+	.main ul li .remove{position:absolute;
+		right:0;}
+		.main ul li:hover{
+			background-color:#f9f9f9;
+			cursor:pointer;}
+			.main ul li:hover .remove{
+				background-color:red;
+			}
+			.main ul li.completed {
+				background: #888;
+				color: #fff;
+				text-decoration: line-through;
+			}
+			h2 button {
+				background-color:#f9f9f9;}
+			</style>
+		</head>
 
-<body>
-<header>
-<h1> My To Do List</h1>
-<h2><input placeholder="Title..." type="text"><button> Add</button></h2>
+		<body>
+			<header>
+				<h1> My To Do List</h1>
+				<h2><input placeholder="Title..." type="text" id="input1"><button onclick="add()" type="button" id="click"> Add</button></h2>
 
-</header>
+			</header>
 
-<div class="main">
+			<div class="main">
 
-<ul>
-<li > Buy Egg  <span class="remove">&#x2715;</span> </li>
-<li> Read a book  <span class="remove">&#x2715;</span></li>
-<li> Organize office  <span class="remove">&#x2715;</span></li>
-<li> UET code camp 2018  <span class="remove">&#x2715;</span></li>
-</ul>
+				<ul id="myUL">
+					<li > Buy Egg  <span class="remove">&#x2715;</span> </li>
+					<li> Read a book  <span class="remove">&#x2715;</span></li>
+					<li> Organize office  <span class="remove">&#x2715;</span></li>
+					<li> UET code camp 2018  <span class="remove">&#x2715;</span></li>
+				</ul>
 
-</div>
+			</div>
 
-</body>
-<script>
-var remove=document.getElementsByClassName("remove");
-  var i;
-  for (i = 0; i < remove.length; i++) {
-    remove[i].onclick = function() {
-      var div = this.parentElement;
-      div.style.display = "none";
-    }
-  }
-var todo = document.querySelector('ul');
-  todo.addEventListener('click', function(e) {
-    if (e.target.tagName === 'LI') {
-      e.target.classList.toggle('completed');
-    }
-  }, false);
-</script>
-</html>
+		</body>
+		<script>
+
+		function add(){
+					var inputvalue = document.getElementById("input1").value;
+					if (inputvalue.length > 0){
+					var node = document.createElement("LI");
+						node.innerHTML = inputvalue + "<span class='remove'>&#x2715;</span>";
+						document.getElementById('myUL').appendChild(node);
+						document.getElementById('input1').value = "";
+						}else {
+									alert("Write something,dumbass~~");
+								}	
+							}
+						
+			var remove=document.getElementsByClassName("remove");
+			var i;
+			for (i = 0; i < remove.length; i++) {
+				remove[i].onclick = function() {
+					var div = this.parentElement;
+					div.style.display = "none";
+				}
+			}
+			var todo = document.querySelector('ul');
+			todo.addEventListener('click', function(e) {
+				if (e.target.tagName === 'LI') {
+					e.target.classList.toggle('completed');
+				}
+			},false);
+
+		</script>
+		</html>
+
