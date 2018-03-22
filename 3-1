@@ -1,0 +1,38 @@
+<div id="root"></div>
+const Title=()=>{
+    return(
+        <div> My To Do List</div>);
+}
+
+const InputForm=({addTodo})=>{
+  return ( 
+    <div> <input id="new todo"/>
+          <button id="add todo"
+            onClick={() => {
+        addTodo(input.value);
+        input.value = '';}}> Add </button>
+    </div>
+  );
+}
+
+
+
+class Todoapp extends React.Component{
+  
+    addTodo(val){
+    const todo = {text: val}
+    this.state.data.push(todo);
+    this.setState({data: this.state.data});
+  }
+ 
+  
+  render(){
+        return(
+         <div>   <Title/>
+                 <InputForm addTodo={this.addTodo.bind(this)}/>
+         </div>
+        );
+    }
+}
+
+ReactDOM.render(<Todoapp />, document.getElementById('root'));
