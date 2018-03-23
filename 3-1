@@ -15,7 +15,11 @@ const InputForm=({addTodo})=>{
   );
 }
 
-
+const List=(props)=>{
+  return(
+    <div>  {props.works} <span>x</span> </div>
+  );
+}
 
 class Todoapp extends React.Component{
   
@@ -30,7 +34,12 @@ class Todoapp extends React.Component{
         return(
          <div>   <Title/>
                  <InputForm addTodo={this.addTodo.bind(this)}/>
-         </div>
+                <List works="Buy Egg"/>
+                <List works="Organize office"/>
+                <List works="Read a book"/>
+                <List works="UET code camp"/>
+          </div>
+          
         );
     }
 }
